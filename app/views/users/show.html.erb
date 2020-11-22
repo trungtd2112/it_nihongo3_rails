@@ -5,10 +5,8 @@
     <%= link_to current_user.email, "/users/show" %>
 <% end %>
 <hr>
-<h1>HOME PAGE</h1>
-<% if user_signed_in? %>
-    <%= link_to 'Book list', "/books" %>
-<% else %>
-    <%= link_to 'Book list', new_user_session_path %>
-<% end %>
+<h1>PROFILE</h1>
+<h3>Mail address</h3>
+<%= current_user.email %>
+
 
