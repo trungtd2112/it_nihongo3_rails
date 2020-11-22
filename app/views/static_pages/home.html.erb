@@ -6,3 +6,9 @@
 <% end %>
 
 <h1>HOME PAGE</h1>
+<% if user_signed_in? %>
+    <%= link_to 'Book list', "/books" %>
+<% else %>
+    <%= link_to 'Book list', new_user_session_path %>
+<% end %>
+
