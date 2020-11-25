@@ -1,12 +1,22 @@
 <%= link_to 'Sign in', new_user_session_path %> 
 <%= link_to 'Sign up', new_user_registration_path %>
+<br>
 <% if user_signed_in? %>
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
-    <%= link_to current_user.email, "/users/show" %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <br>
+    <%= link_to "Hello "+current_user.name, "/users/show" %>
+
+    <hr>
+    <h1>PROFILE</h1>
+    <h3>Mail address</h3>
+    <%= current_user.email %>
+    <h3>Name</h3>
+    <%= current_user.name %>
+    <h3>Age</h3>
+    <%= current_user.age %>
+    <br>
+    <%= link_to 'Edit', edit_user_registration_path %>
+
 <% end %>
-<hr>
-<h1>PROFILE</h1>
-<h3>Mail address</h3>
-<%= current_user.email %>
 
 
